@@ -6,28 +6,28 @@ used in Kohana.
 
 ## Installation
 
-Edit your bootstrap file `APPPATH/bootstrap.php` and enable email module:
+Edit your bootstrap file `APPPATH/bootstrap.php` and enable sender module:
 
 ~~~
 Kohana::modules(array(
   // Some modules
-  'email' => MODPATH.'email',
+  'sender' => MODPATH.'sender',
   // Some other modules
   ));
 ~~~
 
-Then copy `MODPATH/email/config/email.php` to `APPPATH/config/email.php`.
+Then copy `MODPATH/sender/config/sender.php` to `APPPATH/config/sender.php`.
 Well done!
 
 ## Example of usage
 
 ~~~
-Email::instance()
+Sender::instance()
   ->from('sender@example.com')
   ->to('first.recipient@example.com')
   ->to('second.recipient@example.com', 'Mr. Recipient')
   ->subject('Hi there!')
-  ->body('Hi, guys! This is my awesome email.')
+  ->message('Hi, guys! This is my awesome email.')
   ->send();
 ~~~
 

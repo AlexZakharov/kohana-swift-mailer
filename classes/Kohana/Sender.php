@@ -327,23 +327,6 @@ class Kohana_Sender
     }
 
     /**
-     * @param $mailTo
-     * @param $mailFrom
-     * @param $theme
-     * @param $html
-     * @throws Kohana_Exception
-     */
-    public static function sendMail($mailTo, $mailFrom, $theme, $html)
-    {
-        return Sender::instance()
-            ->from($mailFrom)
-            ->to($mailTo)
-            ->subject($theme)
-            ->message($html)
-            ->send();
-    }
-
-    /**
      * Reset all recipients (to, cc, bcc rows)
      *
      * @return Email
